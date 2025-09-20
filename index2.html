@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MindAR Cubo Stabilizzato</title>
+  <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+</head>
+<body>
+  <a-scene
+    mindar-image="imageTargetSrc: images/target.mind; debugUIEnabled: true; filterMinCF: 0.0001; filterBeta: 0.1; missTolerance: 10;"
+    color-space="sRGB"
+    renderer="colorManagement: true, physicallyCorrectLights"
+    vr-mode-ui="enabled: false"
+    device-orientation-permission-ui="enabled: false">
+
+    <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+
+    <!-- Target con cubo stabilizzato -->
+    <a-entity mindar-image-target="targetIndex: 0">
+      <a-box 
+        position="0 0.25 0"  <!-- leggermente sopra il target -->
+        scale="0.3 0.3 0.3"  <!-- più piccolo per stabilità -->
+        color="blue">
+      </a-box>
+    </a-entity>
+
+  </a-scene>
+</body>
+</html>
