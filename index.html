@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MindAR Minimal Example</title>
+  <title>MindAR Cubo Test</title>
   <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
 </head>
@@ -15,18 +15,13 @@
     vr-mode-ui="enabled: false"
     device-orientation-permission-ui="enabled: false">
 
-    <a-assets>
-      <a-asset-item id="piece1" src="models/piece1.glb"></a-asset-item>
-    </a-assets>
-
     <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
-    <!-- Target con modello 3D -->
+    <!-- Target con cubo 3D -->
     <a-entity mindar-image-target="targetIndex: 0">
-      <a-entity gltf-model="#piece1" scale="0.5 0.5 0.5" position="0 0 0"></a-entity>
+      <a-box position="0 0.5 0" scale="0.5 0.5 0.5" color="red"></a-box>
     </a-entity>
 
   </a-scene>
 </body>
 </html>
-
