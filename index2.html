@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MindAR Cubo Verde Stabilizzato</title>
+  <title>MindAR piece1</title>
   <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
 </head>
@@ -15,15 +15,20 @@
     vr-mode-ui="enabled: false"
     device-orientation-permission-ui="enabled: false">
 
+    <a-assets>
+      <a-asset-item id="piece1" src="models/piece1.glb"></a-asset-item>
+    </a-assets>
+
     <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
-    <!-- Target con cubo stabilizzato -->
+    <!-- Target con modello 3D -->
     <a-entity mindar-image-target="targetIndex: 0">
-      <a-box 
-        position="0 0.25 0"       <!-- leggermente sopra il target -->
-        scale="0.3 0.3 0.3"       <!-- dimensioni più adatte -->
-        color="green">
-      </a-box>
+      <a-entity 
+        gltf-model="#piece1" 
+        scale="0.3 0.3 0.3" 
+        position="0 0 0" 
+        rotation="0 180 0">
+      </a-entity>
     </a-entity>
 
   </a-scene>
